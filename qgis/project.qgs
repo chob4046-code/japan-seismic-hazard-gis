@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qgis projectname="Japan Seismic Hazard GIS" version="3.34">
+<projectlayers>
+<maplayer type="vector" name="historical_earthquakes" geometry="UnknownGeometry" readOnly="0"><datasource>../data/historical_earthquakes.geojson</datasource><provider>ogr</provider></maplayer>
+<maplayer type="vector" name="cities_exposure" geometry="UnknownGeometry" readOnly="0"><datasource>../data/cities_exposure.geojson</datasource><provider>ogr</provider></maplayer>
+</projectlayers><layer-tree-group name="GIS Analysis" expanded="1"/>
+<mapcanvas><units>degrees</units><destinationsrs><spatialrefsys><authid>EPSG:4326</authid></spatialrefsys></destinationsrs></mapcanvas>
+</qgis>
