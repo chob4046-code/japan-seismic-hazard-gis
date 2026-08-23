@@ -1,8 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<qgis projectname="Japan Seismic Hazard GIS" version="3.34">
-<projectlayers>
-<maplayer type="vector" name="historical_earthquakes" geometry="UnknownGeometry" readOnly="0"><datasource>../data/historical_earthquakes.geojson</datasource><provider>ogr</provider></maplayer>
-<maplayer type="vector" name="cities_exposure" geometry="UnknownGeometry" readOnly="0"><datasource>../data/cities_exposure.geojson</datasource><provider>ogr</provider></maplayer>
-</projectlayers><layer-tree-group name="GIS Analysis" expanded="1"/>
-<mapcanvas><units>degrees</units><destinationsrs><spatialrefsys><authid>EPSG:4326</authid></spatialrefsys></destinationsrs></mapcanvas>
+<qgis projectname="Japan Seismic Hazard GIS" version="3.34.0">
+  <projectlayers>
+    <maplayer type="vector" geometry="Point" name="Historical Earthquakes" id="historical_earthquakes_001">
+      <datasource>../data/historical_earthquakes.geojson</datasource>
+      <layername>historical_earthquakes</layername>
+      <provider>ogr</provider>
+      <renderer-v2 type="singleSymbol" symbollevels="0" enableorderby="0">
+        <symbols>
+          <symbol type="marker" name="0" alpha="1" force_rhr="0" clip_to_extent="1">
+            <layer class="SimpleMarker" enabled="1" locked="0" pass="0" class="SimpleMarker">
+              <Option type="Map">
+                <Option name="color" value="220,40,40,255" type="QString"/>
+                <Option name="size" value="4" type="QString"/>
+                <Option name="name" value="circle" type="QString"/>
+                <Option name="outline_color" value="80,20,20,255" type="QString"/>
+                <Option name="outline_width" value="0.5" type="QString"/>
+              </Option>
+              <data_defined_properties/>
+            </layer>
+          </symbol>
+        </symbols>
+      </renderer-v2>
+    </maplayer>
+    <maplayer type="vector" geometry="Point" name="Cities Exposure" id="cities_exposure_001">
+      <datasource>../data/cities_exposure.geojson</datasource>
+      <layername>cities_exposure</layername>
+      <provider>ogr</provider>
+      <renderer-v2 type="singleSymbol" symbollevels="0" enableorderby="0">
+        <symbols>
+          <symbol type="marker" name="0" alpha="1" force_rhr="0" clip_to_extent="1">
+            <layer class="SimpleMarker" enabled="1" locked="0" pass="0" class="SimpleMarker">
+              <Option type="Map">
+                <Option name="color" value="45,100,220,255" type="QString"/>
+                <Option name="size" value="3.5" type="QString"/>
+                <Option name="name" value="circle" type="QString"/>
+                <Option name="outline_color" value="20,50,120,255" type="QString"/>
+                <Option name="outline_width" value="0.5" type="QString"/>
+              </Option>
+              <data_defined_properties/>
+            </layer>
+          </symbol>
+        </symbols>
+      </renderer-v2>
+    </maplayer>
+  </projectlayers>
+  <layer-tree-group name="GIS Analysis" expanded="1">
+    <layer-tree-layer name="Historical Earthquakes" source="../data/historical_earthquakes.geojson" id="historical_earthquakes_001" providerKey="ogr" checked="Qt::Checked"/>
+    <layer-tree-layer name="Cities Exposure" source="../data/cities_exposure.geojson" id="cities_exposure_001" providerKey="ogr" checked="Qt::Checked"/>
+  </layer-tree-group>
+  <mapcanvas name="theMapCanvas" annotationsVisible="1" simplifyDrawingHints="1" simplifyAlgorithm="0" simplifyDrawingTol="1" simplifyMaxScale="1" simplifyLocal="1" cachingEnabled="0" renderFlag="1" mapUpdateInterval="250" scaleBasedVisibility="0" temporalNavigationEnabled="0">
+    <units>degrees</units>
+    <extent>
+      <xmin>128.0</xmin>
+      <ymin>30.0</ymin>
+      <xmax>146.0</xmax>
+      <ymax>46.5</ymax>
+    </extent>
+    <destinationsrs>
+      <spatialrefsys>
+        <authid>EPSG:4326</authid>
+        <description>WGS 84</description>
+      </spatialrefsys>
+    </destinationsrs>
+  </mapcanvas>
 </qgis>
