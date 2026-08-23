@@ -1,0 +1,1 @@
+{"source":"J-SHIS/NIED","api":"https://www.j-shis.bosai.go.jp/map/api/pshm/Y2024/AVR/TTL_MTTL/meshinfo.geojson","attribute":"T30_I45_PS","meaning":"30-year probability of exceedance for instrumental intensity 4.5 or greater (approximately JMA 5-lower or greater)","official_documentation":"https://www.j-shis.bosai.go.jp/en/api-pshm-meshinfo"}
