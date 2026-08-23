@@ -1,104 +1,47 @@
-# Japan Seismic Hazard & Exposure GIS
+# 🇯🇵 Japan Seismic Hazard & Exposure GIS
 
-A QGIS-based disaster-risk mapping project for Japan that combines seismic hazard, ground amplification, population exposure, faults, and critical infrastructure into a reproducible spatial-analysis workflow.
+A QGIS-based portfolio project demonstrating earthquake-event and population-exposure screening for Japan, with an explicit integration path to official J-SHIS seismic-hazard data.
 
-## Project goal
+## Objective
 
-Build a transparent **Seismic Exposure Index** that demonstrates how GIS can connect earthquake hazard with people and infrastructure. This is an educational screening workflow, not an engineering safety assessment or an earthquake prediction system.
+Demonstrate how GIS can connect earthquake reference events, population exposure, and spatial proximity into a transparent screening workflow.
 
-## Core workflow
+## Included outputs
 
-```text
-Seismic hazard
-      +
-Ground amplification / terrain
-      +
-Population exposure
-      +
-Critical infrastructure
-      ↓
-Standardize indicators
-      ↓
-Weighted overlay
-      ↓
-Seismic Exposure Index
-      ↓
-Low / Moderate / High / Very High
-```
+- `data/historical_earthquakes.geojson` — curated historical earthquake reference points
+- `data/cities_exposure.geojson` — city exposure screening points
+- `data/exposure_results.json` — calculated screening results
+- `data/jshis_api_reference.json` — official J-SHIS API integration reference
+- `qgis/project.qgs` — QGIS project referencing the layers
+- `maps/japan_seismic_exposure_map.svg` — portfolio map output
+- `analysis/results.md` — interpretation and official-data upgrade path
 
-## Data strategy
+## Screening method
 
-The preferred authoritative source is **J-SHIS (Japan Seismic Hazard Information Station)** operated by the National Research Institute for Earth Science and Disaster Resilience (NIED). J-SHIS provides probabilistic seismic hazard maps, scenario earthquake shaking maps, fault coordinates, site amplification factors, subsurface structure data, and exposed-population statistics.
+The demonstration combines distance to a curated historical earthquake reference event with a population-proxy rank. It is intentionally **not** presented as an official seismic hazard model or earthquake prediction system.
 
-Reference: https://www.j-shis.bosai.go.jp/en/downloads
+## Official J-SHIS integration
 
-J-SHIS also provides a web API that can return seismic-hazard mesh information as GeoJSON, including probabilities of exceeding specified seismic-intensity levels.
+J-SHIS/NIED provides probabilistic seismic hazard maps, scenario earthquake shaking maps, fault information, site amplification factors, subsurface structure information, and exposed-population statistics. The J-SHIS API can return 250 m seismic-hazard mesh information as GeoJSON. The repository records the 2024 API endpoint and `T30_I45_PS` attribute as the production-data integration target.
 
-Reference: https://www.j-shis.bosai.go.jp/en/api-pshm-meshinfo
+## QGIS workflow
 
-## Planned layers
-
-- Japan administrative boundary
-- Probabilistic seismic hazard mesh
-- Scenario earthquake shaking
-- Active faults / seismic source faults
-- Site amplification factor
-- Historical earthquake observations where appropriate
-- Population exposure
-- Roads and railways
-- Hospitals and other critical facilities
-- Optional tsunami/coastal exposure layer
-
-## Analysis
-
-The project will demonstrate:
-
-1. CRS and spatial-data preparation
-2. Raster/vector layer integration
-3. Hazard classification
-4. Proximity analysis around faults
-5. Population exposure calculation
-6. Critical-infrastructure exposure analysis
-7. Weighted-overlay modelling
-8. Map composition and export
-
-### Example scoring framework
-
-| Indicator | Weight |
-|---|---:|
-| Seismic hazard | 40% |
-| Ground amplification | 20% |
-| Population exposure | 20% |
-| Critical infrastructure exposure | 10% |
-| Fault proximity | 10% |
-
-Weights are illustrative and should be treated as a modelling choice, not an official Japanese risk standard.
-
-## Repository structure
-
-```text
-japan-seismic-hazard-gis/
-├── README.md
-├── data/
-│   ├── raw/
-│   └── processed/
-├── qgis/
-├── maps/
-├── analysis/
-└── docs/
-```
-
-## Important limitation
-
-A GIS screening index cannot predict when or where an earthquake will occur. It also cannot replace structural engineering, official hazard assessments, evacuation planning, or site-specific investigations.
-
-## Data attribution
-
-When J-SHIS data are downloaded or reproduced, follow the J-SHIS terms and the attribution/citation requirements associated with the individual dataset.
+1. Open `qgis/project.qgs`.
+2. Inspect historical events and city exposure points.
+3. Add official J-SHIS hazard mesh data.
+4. Reproject layers into a suitable Japanese projected CRS.
+5. Standardize hazard, ground-condition, population, and infrastructure indicators.
+6. Build a documented weighted exposure index.
+7. Validate the analysis and clearly separate hazard from exposure.
+8. Export the final cartographic layout.
 
 ## Status
 
-**Portfolio project — methodology and repository structure established.** Official datasets should be downloaded and processed before presenting quantitative results as real-world findings.
+**Completed portfolio screening demonstration.** The repository now contains GIS data, a QGIS project, calculated results, a map output, and a documented route to official J-SHIS hazard integration.
+
+## Safety / interpretation
+
+This project does not predict earthquakes and does not replace structural engineering, official hazard assessments, evacuation planning, or site-specific investigations.
 
 ## Author
 
