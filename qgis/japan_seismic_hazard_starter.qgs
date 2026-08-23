@@ -1,0 +1,11 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis projectname="Japan Seismic Hazard GIS" version="3.34.0-Prizren">
+  <title>Japan Seismic Hazard GIS</title>
+  <homePath path=""/>
+  <projectCrs><spatialrefsys><authid>EPSG:4326</authid><description>WGS 84</description><projectionacronym>longlat</projectionacronym><ellipsoid>EPSG:7030</ellipsoid></spatialrefsys></projectCrs>
+  <layer-tree-group name="Japan seismic study"><layer-tree-layer name="Japan boundary" id="japan_boundary" checked="1"/><layer-tree-layer name="Major populated places" id="japan_places" checked="1"/></layer-tree-group>
+  <mapcanvas><units>degrees</units><extent><xmin>128.0</xmin><ymin>30.0</ymin><xmax>146.0</xmax><ymax>46.5</ymax></extent></mapcanvas>
+  <projectlayers>
+    <maplayer type="vector" name="Japan boundary" id="japan_boundary" minScale="1e+08" maxScale="0"><datasource>/vsicurl/https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson</datasource><provider>ogr</provider><subsetstring>ADM0_A3 = 'JPN'</subsetstring><renderer-v2 type="singleSymbol"><symbols><symbol type="fill" name="0"><layer class="SimpleFill"><Option type="Map"><Option name="color" value="244,228,228,255"/><Option name="outline_color" value="120,70,70,255"/><Option name="outline_width" value="0.5"/></Option></layer></symbol></symbols></renderer-v2></maplayer>
+    <maplayer type="vector" name="Major populated places" id="japan_places" minScale="1e+08" maxScale="0"><datasource>/vsicurl/https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_populated_places.geojson</datasource><provider>ogr</provider><renderer-v2 type="singleSymbol"><symbols><symbol type="marker" name="0"><layer class="SimpleMarker"><Option type="Map"><Option name="color" value="190,50,50,255"/><Option name="size" value="2.0"/></Option></layer></symbol></symbols></renderer-v2></maplayer>
+  </projectlayers><layerorder/><relations/><snapping-settings/></qgis>
